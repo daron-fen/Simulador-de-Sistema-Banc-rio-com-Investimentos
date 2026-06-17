@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banco Invest+ | Simulador Financeiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-mark">B</span>
+        <div>
+          <strong>Banco Invest+</strong>
+          <small>Simulador bancario com investimentos</small>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="#operacoes">Operacoes</a>
+        <a href="#investimentos">Investimentos</a>
+        <a href="#seguranca">Seguranca</a>
+      </nav>
+      <a class="btn btn-primary" href="#painel">Acessar painel</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="painel">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill">Projeto em Python + Django</span>
+          <h1>Simule transacoes bancarias e acompanhe seus investimentos em um unico lugar.</h1>
+          <p>
+            Uma interface moderna para deposito, saque, transferencia e carteira de investimentos em renda fixa
+            e variavel.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#operacoes">Explorar operacoes</a>
+            <a class="btn btn-secondary" href="#investimentos">Ver carteira</a>
+          </div>
+          <div class="stats">
+            <article>
+              <strong>R$ 125.430</strong>
+              <span>Saldo total</span>
+            </article>
+            <article>
+              <strong>+12.8%</strong>
+              <span>Rentabilidade anual</span>
+            </article>
+            <article>
+              <strong>24/7</strong>
+              <span>Monitoramento</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="dashboard-card">
+          <div class="card-header">
+            <div>
+              <span class="muted">Conta digital</span>
+              <h2>Resumo financeiro</h2>
+            </div>
+            <span class="badge success">Ativa</span>
+          </div>
+
+          <div class="balance">
+            <span>Saldo disponivel</span>
+            <strong>R$ 48.920,00</strong>
+          </div>
+
+          <div class="mini-grid">
+            <div>
+              <span>Depositos</span>
+              <strong>R$ 18.000</strong>
+            </div>
+            <div>
+              <span>Saques</span>
+              <strong>R$ 4.200</strong>
+            </div>
+            <div>
+              <span>Transferencias</span>
+              <strong>R$ 9.850</strong>
+            </div>
+            <div>
+              <span>Investido</span>
+              <strong>R$ 73.400</strong>
+            </div>
+          </div>
+
+          <div class="progress-panel">
+            <div class="progress-labels">
+              <span>Meta mensal</span>
+              <strong>82%</strong>
+            </div>
+            <div class="progress-bar">
+              <span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="operacoes">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">Operacoes essenciais</span>
+          <h2>Controle completo das movimentacoes financeiras.</h2>
+          <p>Fluxos simples para simular o dia a dia bancario com foco em usabilidade e clareza.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="icon">01</span>
+            <h3>Depositos</h3>
+            <p>Receba valores na conta e atualize o saldo com acompanhamento imediato.</p>
+          </article>
+          <article class="feature-card">
+            <span class="icon">02</span>
+            <h3>Saques</h3>
+            <p>Retire recursos com validacoes de saldo para manter a consistencia da simulacao.</p>
+          </article>
+          <article class="feature-card">
+            <span class="icon">03</span>
+            <h3>Transferencias</h3>
+            <p>Envie valores entre contas com historico organizado e visual intuitivo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="investimentos">
+      <div class="container invest-grid">
+        <div>
+          <span class="pill">Carteira de investimentos</span>
+          <h2>Renda fixa e variavel em uma experiencia visual profissional.</h2>
+          <p>
+            O projeto destaca a area de investimentos com cards, indicadores de desempenho e distribuicao de
+            ativos.
+          </p>
+
+          <div class="portfolio-list">
+            <article>
+              <div>
+                <h3>Tesouro Direto</h3>
+                <span>Perfil conservador</span>
+              </div>
+              <strong>R$ 25.000</strong>
+            </article>
+            <article>
+              <div>
+                <h3>CDB / LCIs / LCAs</h3>
+                <span>Renda fixa</span>
+              </div>
+              <strong>R$ 31.800</strong>
+            </article>
+            <article>
+              <div>
+                <h3>Acoes e FIIs</h3>
+                <span>Renda variavel</span>
+              </div>
+              <strong>R$ 16.600</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="card-header">
+            <div>
+              <span class="muted">Desempenho da carteira</span>
+              <h2>Evolucao mensal</h2>
+            </div>
+            <span class="badge">+12.8%</span>
+          </div>
+
+          <div class="bars">
+            <span style="height: 34%"></span>
+            <span style="height: 48%"></span>
+            <span style="height: 64%"></span>
+            <span style="height: 52%"></span>
+            <span style="height: 78%"></span>
+            <span style="height: 88%"></span>
+          </div>
+
+          <div class="legend">
+            <span><i class="dot fixed"></i> Renda fixa</span>
+            <span><i class="dot variable"></i> Renda variavel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="seguranca">
+      <div class="container security-grid">
+        <article class="security-card">
+          <span class="pill">Seguranca</span>
+          <h2>Interface confiavel para um backend robusto.</h2>
+          <p>Visuais claros, organizacao consistente e foco em protecao das operacoes simuladas.</p>
+        </article>
+
+        <article class="security-card accent">
+          <h3>Recursos destacados</h3>
+          <ul>
+            <li>Autenticacao de usuario</li>
+            <li>Historico de transacoes</li>
+            <li>Controle de saldo e limites</li>
+            <li>Visao gerencial da carteira</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Banco Invest+ - Simulador de Sistema Bancario com Investimentos.</p>
+      <span>Frontend em HTML e CSS pronto para integrar ao Django.</span>
+    </div>
+  </footer>
+</body>
+</html>
