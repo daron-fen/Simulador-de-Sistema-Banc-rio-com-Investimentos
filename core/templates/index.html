@@ -53,7 +53,7 @@
           </div>
           <div class="stats">
             <article>
-              <strong>R$ 125.430</strong>
+              <strong>R$ {{ saldo_total|floatformat:2|localize }}</strong>
               <span>Saldo total</span>
             </article>
             <article>
@@ -78,25 +78,25 @@
 
           <div class="balance">
             <span>Saldo disponível</span>
-            <strong>R$ {{ saldo|localize }}</strong>
+            R$ {{ saldo|floatformat:2|localize }}
           </div>
 
           <div class="mini-grid">
             <div>
               <span>Depositos</span>
-              <strong>R$ {{ depositos|localize }}</strong>
+              <strong>R$ {{ depositos|floatformat:2|localize }}</strong>
             </div>
             <div>
               <span>Saques</span>
-              <strong>R$ {{ saques|localize }}</strong>
+              <strong>R$ {{ saques|floatformat:2|localize }}</strong>
             </div>
             <div>
               <span>Transferências</span>
-              <strong>R$ {{ transferencias|localize }}</strong>
+              <strong>R$ {{ transferencias|floatformat:2|localize }}</strong>
             </div>
             <div>
               <span>Investido</span>
-              <strong>R$ {{ investido|localize }}</strong>
+              <strong>R$ {{ investido|floatformat:2|localize }}</strong>
             </div>
           </div>
 
@@ -126,19 +126,44 @@
             <span class="icon">01</span>
             <h3>Depósitos</h3>
             <p>Receba valores na conta e atualize o saldo com acompanhamento imediato.</p>
+            
+            <form method="POST" action="" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              {% csrf_token %}
+              <input type="hidden" name="acao" value="deposito">
+              <input type="number" name="valor" step="0.01" min="0.01" placeholder="Valor (R$)" required 
+                     style="padding: 0.5rem; border-radius: 6px; border: 1px solid var(--border-color, #ccc); background: var(--bg-card); color: var(--text-main); font-family: inherit;">
+              <button type="submit" class="btn btn-primary" style="padding: 0.5rem; font-size: 0.9rem;">Confirmar Depósito</button>
+            </form>
           </article>
+
           <article class="feature-card">
             <span class="icon">02</span>
             <h3>Saques</h3>
             <p>Retire recursos com validações de saldo para manter a consistência da simulação.</p>
+            
+            <form method="POST" action="" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              {% csrf_token %}
+              <input type="hidden" name="acao" value="saque">
+              <input type="number" name="valor" step="0.01" min="0.01" placeholder="Valor (R$)" required 
+                     style="padding: 0.5rem; border-radius: 6px; border: 1px solid var(--border-color, #ccc); background: var(--bg-card); color: var(--text-main); font-family: inherit;">
+              <button type="submit" class="btn btn-primary" style="padding: 0.5rem; font-size: 0.9rem;">Confirmar Saque</button>
+            </form>
           </article>
+
           <article class="feature-card">
             <span class="icon">03</span>
             <h3>Transferências</h3>
             <p>Envie valores entre contas com histórico organizado e visual intuitivo.</p>
+            
+            <form method="POST" action="" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              {% csrf_token %}
+              <input type="hidden" name="acao" value="transferencia">
+              <input type="number" name="valor" step="0.01" min="0.01" placeholder="Valor (R$)" required 
+                     style="padding: 0.5rem; border-radius: 6px; border: 1px solid var(--border-color, #ccc); background: var(--bg-card); color: var(--text-main); font-family: inherit;">
+              <button type="submit" class="btn btn-secondary" style="padding: 0.5rem; font-size: 0.9rem;" disabled>Em breve</button>
+            </form>
           </article>
         </div>
-      </div>
     </section>
 
     <section class="section alt" id="investimentos">
@@ -157,21 +182,21 @@
                 <h3>Tesouro Direto</h3>
                 <span>Perfil conservador</span>
               </div>
-              <strong>R$ 25.000</strong>
+              <strong>R$ {{ investido_tesouro|floatformat:2|localize }}</strong>
             </article>
             <article>
               <div>
                 <h3>CDB / LCIs / LCAs</h3>
                 <span>Renda fixa</span>
               </div>
-              <strong>R$ 31.800</strong>
+              <strong>R$ {{ investido_cdb|floatformat:2|localize }}</strong>
             </article>
             <article>
               <div>
                 <h3>Ações e FIIs</h3>
                 <span>Renda variável</span>
               </div>
-              <strong>R$ 16.600</strong>
+              <strong>R$ {{ investido_acoes|floatformat:2|localize }}</strong>
             </article>
           </div>
         </div>
@@ -207,7 +232,7 @@
         <article class="security-card">
           <span class="pill">Segurança</span>
           <h2>Interface confiável para um backend robusto.</h2>
-          <p>Visuais claros, organização consistente e foco em proteção das operações simuladas.</p>
+          <p>Visuais claros, organization consistente e foco em proteção das operações simuladas.</p>
         </article>
 
         <article class="security-card accent">
