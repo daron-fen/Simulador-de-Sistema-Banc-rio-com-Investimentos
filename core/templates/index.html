@@ -1,3 +1,6 @@
+{% load static %}
+{% load l10n %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
 </head>
 <body>
   <header class="topbar">
@@ -75,25 +78,25 @@
 
           <div class="balance">
             <span>Saldo disponível</span>
-            <strong>R$ 48.920,00</strong>
+            <strong>R$ {{ saldo|localize }}</strong>
           </div>
 
           <div class="mini-grid">
             <div>
               <span>Depositos</span>
-              <strong>R$ 18.000</strong>
+              <strong>R$ {{ depositos|localize }}</strong>
             </div>
             <div>
               <span>Saques</span>
-              <strong>R$ 4.200</strong>
+              <strong>R$ {{ saques|localize }}</strong>
             </div>
             <div>
               <span>Transferências</span>
-              <strong>R$ 9.850</strong>
+              <strong>R$ {{ transferencias|localize }}</strong>
             </div>
             <div>
               <span>Investido</span>
-              <strong>R$ 73.400</strong>
+              <strong>R$ {{ investido|localize }}</strong>
             </div>
           </div>
 
